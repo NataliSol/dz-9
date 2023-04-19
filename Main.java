@@ -1,12 +1,13 @@
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
         //task 1(**)
-        String[] array = new String[]{"мама", "тато", "папа", "їж їжак желе"};
+        String[] array = new String[]{"мама", "тато", "вово", "їж їжак желе"};
         System.out.println(returnUniqueChars(returnAllWordsWithPairDuplicates(array)));
         //task 2
         int[] array2 = new int[]{8, 2, 3, 4, 5, 6, 7};
@@ -62,13 +63,13 @@ public class Main {
         // і вертає суму всіх його парних
         // елементів(не тих які мають парні індекси а ті які самі є парними).
         // [8,2,3,4,5,6,7] -> 20
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                count = count + array[i];
-            }
-        }
-        System.out.println(count);
+//        int count = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] % 2 == 0) {
+//                count = count + array[i];
+//            }
+//        }
+//        System.out.println(count);
     }
 
     public static void printElements(String n) {
@@ -82,8 +83,12 @@ public class Main {
         //8
         //0
         char[] chars = n.toCharArray();
+        Set<Character> characterSet = new LinkedHashSet<>();
         for (int i = 0; i < chars.length; i++) {
-            System.out.println(chars[i]);
+            characterSet.add(chars[i]);
+        }
+        for (Character character : characterSet) {
+            System.out.println(character);
         }
     }
 }
